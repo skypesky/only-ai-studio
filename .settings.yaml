@@ -1,17 +1,17 @@
-_id: "415421910063513600"
-name: remote test1
+_id: "415405684872445952"
+name: test1
 description: null
 model: ""
-createdAt: 2024-02-21T08:18:21.526Z
-updatedAt: 2024-02-21T08:34:09.182Z
+createdAt: 2024-02-21T07:13:53.138Z
+updatedAt: 2024-02-21T08:37:06.749Z
 createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
 updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
 pinnedAt: null
-icon: https://bbqasaloioeeahlpskse66262a3p76d32jihsvrw2h4.did.abtnet.io/image-bin/uploads/028bf787919e3e25bd5aca113c5471bb.png
+icon: ""
 gitType: simple
 temperature: 1
 topP: 1
 presencePenalty: null
 frequencyPenalty: null
 maxTokens: null
-gitAutoSync: null
+gitAutoSync: true

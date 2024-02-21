@@ -1,0 +1,116 @@
+id: 20240221153735-vNphck
+tests:
+  - id: 1708502295098-T_-H9KIsut-YWRqU
+    parameters:
+      code: " // eslint-disable-next-line @typescript-eslint/no-var-requires import
+        GraphQLClient from '@ocap/client'; import OcapClient from
+        '@ocap/client'; import { canVisit, getAssetUrl, myPAll } from
+        '../../../libs'; import { customDebug } from '../../../libs/logger'
+        import got from 'got'; import {joinURL} from 'ufo'; import _ from
+        'lodash';   export interface NftFixOptions  {   ownerDid?:
+        string;   factoryDid?: string;   assetDid?: string;    chainHost:
+        string;    fix?: false | true; }  type PartialDeep<T> = {   [K in keyof
+        T]?: T[K] extends object ? PartialDeep<T[K]> : T[K]; };  export class
+        NftFix {    readonly options: NftFixOptions;   readonly client:
+        GraphQLClient;    constructor(options: NftFixOptions) {     this.options
+        = options;     this.client = new
+        OcapClient(this.options.chainHost);   }       async
+        findFactoriesByOwnerDid(ownerDid: string, options?:
+        PartialDeep<GraphQLClient.ListFactoriesParams>):
+        Promise<GraphQLClient.ResponseListFactories> {      let cursor: number =
+        +options?.paging?.cursor || 0;     const size = 100;      const
+        factories: GraphQLClient.ResponseListFactories = await
+        this.client.listFactories({       ownerAddress: ownerDid,       paging:
+        {         size,         cursor:
+        String(cursor),       }     });      if(factories.page.next)
+        {       cursor += size;       const nextValue:
+        GraphQLClient.ResponseListFactories = await
+        this.findFactoriesByOwnerDid(ownerDid, {          paging:
+        {           cursor: String(cursor)         }       } as
+        PartialDeep<GraphQLClient.ListFactoriesParams>);       factories.factor\
+        ies.push(         ...nextValue.factories       );     }      return
+        factories;   }    async findAssetsByFactoryDid(factoryDid: string,
+        options?: PartialDeep<GraphQLClient.ListAssetsParams>):
+        Promise<GraphQLClient.ResponseListAssets> {     let cursor: number =
+        +options?.paging?.cursor || 0;     const size = 100;      const res:
+        GraphQLClient.ResponseListAssets = await
+        this.client.listAssets({       factoryAddress: factoryDid,       paging:
+        {         size,         cursor:
+        String(cursor),       }     });          if(res.page.next)
+        {       cursor += size;       const nextValue:
+        GraphQLClient.ResponseListAssets = await
+        this.findAssetsByFactoryDid(factoryDid, {          paging:
+        {           cursor: String(cursor)         }       } as
+        PartialDeep<GraphQLClient.ListAssetsParams>);       res.assets.push(         \
+        ...nextValue.assets       );     }      return res;   }    async
+        fixByOwnerDid(ownerDid: string) {     const factoriesRes = await
+        this.findFactoriesByOwnerDid(ownerDid);          await
+        myPAll(factoriesRes.factories.map(x => {       return async () =>
+        {         await
+        this.fixByFactoryDid(x.address);       }     }));   }    async
+        fixByFactoryDid(factoryDid: string ) {     const assetsRes =  await
+        this.findAssetsByFactoryDid(factoryDid);         console.log('fixByFact\
+        oryDid', `${factoryDid} has ${assetsRes.assets.length}
+        assets`);     customDebug('fixByFactoryDid.assets.addressList',
+        assetsRes.assets.map(x => x.address));      await
+        myPAll(       assetsRes.assets.map(x => {         return async ()
+        =>{           await
+        this.fixByAssetDid(x.address);         }       })     );   }     async
+        fixByAssetDid(assetDid: string) {     const { state: asset }: { state:
+        GraphQLClient.AssetState }= await this.client.getAssetState({ address:
+        assetDid });     const { state: factory }: { state:
+        GraphQLClient.AssetFactoryState } = await this.client.getFactoryState({
+        address: asset.parent })      if (asset.display.type !== 'url')
+        {       return;     }      const assetInfo =
+        this.getAssetInfo(asset);      try {       const displayUrl =
+        joinURL(`${asset.display.content}?assetId=${asset.address}&t=${new
+        Date().toISOString()}`);        customDebug('fixByAssetDid', {asset,
+        displayUrl});        if(!await canVisit(displayUrl)) {         if
+        (this.options.fix) {           const postMintHook = {             hook:
+        `https://www.luckwheel.xyz/blender/api/assets/preview/a074fc0efc707342c\
+        0cd40d4b04416ae`,           };           if(!postMintHook)
+        {             console.error('no postMint hook',
+        asset);             return;           }              await
+        got.post(             `${postMintHook.hook}?assetId=${asset.address}`           \
+        );           console.log('Unavailable asset nft display found (fixed)',
+        assetInfo)         } else {           console.log('Unavailable asset nft
+        display found (not fixed)', assetInfo)         }       }     } catch
+        (error) {       console.log('Unavailable asset nft display found (not
+        fixed and throw an error)', assetInfo, {message:
+        error.message})       customDebug('postMint error', {asset,
+        error});     }   }    private getAssetInfo(asset:
+        GraphQLClient.AssetState): string {    const assetUrl
+        =  getAssetUrl(this.options.chainHost, asset.address);     return
+        `${asset.moniker} create at ${asset.context.genesisTime}
+        ${assetUrl}`;   }    async fix(): Promise<void> {     if
+        (this.options.ownerDid) {       await
+        this.fixByOwnerDid(this.options.ownerDid)     } else if
+        (this.options.factoryDid) {       await
+        this.fixByFactoryDid(this.options.factoryDid);     } else
+        if(this.options.assetDid) {       await
+        this.fixByAssetDid(this.options.assetDid);     } else {       throw new
+        Error('no ownerDid or factoryDid or assetDid specified');     }   }  }"
+    createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+    output: >-
+      1. 代码中导入的模块应该按照规范放在文件顶部，而不是在中间。
+
+      2. 变量命名要符合规范，比如`res`、`cursor`等命名不够具有意义，建议更换为具有描述性的变量名。
+
+      3. 在`findFactoriesByOwnerDid`和`findAssetsByFactoryDid`方法中使用了递归调用来处理分页逻辑，这样做比较清晰和易于理解。
+
+      4. 在`fixByOwnerDid`和`fixByFactoryDid`方法中使用了`myPAll`来处理并发，这样可以提高效率。
+
+      5. 在`fixByAssetDid`方法中处理了一些逻辑，比如检查url是否可访问，如果不可访问则根据配置进行fix，这样可以保证数据的一致性。
+
+      6. `fix`方法根据参数来执行对应的fix操作，增加了代码的灵活性和可扩展性。
+
+      7. 在`fixByAssetDid`方法中，`postMintHook`对象被定义了，但是未被使用，可能是代码中的一个问题。
+
+      8. 类型定义比较清晰，并且使用了泛型和接口来提高代码的灵活性和可读性。
+
+
+      总体来说，代码风格比较规范，逻辑清晰，符合 TypeScript 的语法规范，但是可以进一步优化变量命名和增加一些注释来提高代码的可读性和维护性。
+  - id: 1708503542580-twuoUx8xTfrPUUeV
+    parameters:
+      code: console.log("hello world!");
+    createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq

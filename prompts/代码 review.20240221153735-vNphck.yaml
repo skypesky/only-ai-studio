@@ -1,0 +1,19 @@
+type: prompt
+id: 20240221153735-vNphck
+createdAt: 2024-02-21T07:37:35.537Z
+updatedAt: 2024-02-21T07:37:35.537Z
+createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+prompts:
+  - type: message
+    data:
+      id: 2H4xotQRxQsveDG6P8Du7
+      role: user
+      content: |-
+        请你帮忙 review 以下代码,要求代码优雅: 
+        {{code}}
+model: gpt-3.5-turbo
+parameters:
+  - id: wxQzPg5kLwyQeBxwqCVjA
+    key: code
+name: 代码 review
