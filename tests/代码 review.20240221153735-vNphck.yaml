@@ -1,6 +1,6 @@
 id: 20240221153735-vNphck
 tests:
-  - id: 1708501309209-TZ3l9XA2n9nffxZa
+  - id: 1708502295098-T_-H9KIsut-YWRqU
     parameters:
       code: " // eslint-disable-next-line @typescript-eslint/no-var-requires import
         GraphQLClient from '@ocap/client'; import OcapClient from
@@ -90,4 +90,27 @@ tests:
         if(this.options.assetDid) {       await
         this.fixByAssetDid(this.options.assetDid);     } else {       throw new
         Error('no ownerDid or factoryDid or assetDid specified');     }   }  }"
+    createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+    output: >-
+      1. 代码中导入的模块应该按照规范放在文件顶部，而不是在中间。
+
+      2. 变量命名要符合规范，比如`res`、`cursor`等命名不够具有意义，建议更换为具有描述性的变量名。
+
+      3. 在`findFactoriesByOwnerDid`和`findAssetsByFactoryDid`方法中使用了递归调用来处理分页逻辑，这样做比较清晰和易于理解。
+
+      4. 在`fixByOwnerDid`和`fixByFactoryDid`方法中使用了`myPAll`来处理并发，这样可以提高效率。
+
+      5. 在`fixByAssetDid`方法中处理了一些逻辑，比如检查url是否可访问，如果不可访问则根据配置进行fix，这样可以保证数据的一致性。
+
+      6. `fix`方法根据参数来执行对应的fix操作，增加了代码的灵活性和可扩展性。
+
+      7. 在`fixByAssetDid`方法中，`postMintHook`对象被定义了，但是未被使用，可能是代码中的一个问题。
+
+      8. 类型定义比较清晰，并且使用了泛型和接口来提高代码的灵活性和可读性。
+
+
+      总体来说，代码风格比较规范，逻辑清晰，符合 TypeScript 的语法规范，但是可以进一步优化变量命名和增加一些注释来提高代码的可读性和维护性。
+  - id: 1708503542580-twuoUx8xTfrPUUeV
+    parameters:
+      code: console.log("hello world!");
     createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
