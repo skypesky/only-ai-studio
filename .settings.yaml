@@ -1,14 +1,14 @@
 _id: "415405684872445952"
 name: test1
 description: null
-model: ""
+model: gpt-3.5-turbo
 createdAt: 2024-02-21T07:13:53.138Z
-updatedAt: 2024-02-21T08:49:11.052Z
+updatedAt: 2024-02-21T08:51:04.464Z
 createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
 updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
 pinnedAt: null
 icon: ""
-gitType: simple
+gitType: default
 temperature: 1
 topP: 1
 presencePenalty: null
