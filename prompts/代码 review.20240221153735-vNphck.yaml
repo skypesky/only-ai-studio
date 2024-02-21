@@ -10,7 +10,7 @@ prompts:
       id: 2H4xotQRxQsveDG6P8Du7
       role: user
       content: |-
-        请你帮忙 review 以下代码,要求优雅: 
+        请你帮忙 review 以下代码,要求代码优雅: 
         {{code}}
 model: gpt-3.5-turbo
 parameters:
