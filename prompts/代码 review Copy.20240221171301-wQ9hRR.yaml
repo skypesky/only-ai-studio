@@ -1,5 +1,5 @@
 type: prompt
-id: 20240221153735-vNphck
+id: 20240221171301-wQ9hRR
 createdAt: 2024-02-21T07:37:35.537Z
 updatedAt: 2024-02-21T07:37:35.537Z
 createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
@@ -8,25 +8,22 @@ prompts:
   - type: executeBlock
     data:
       id: 20240221171158-iwqpaZ
-      selectType: selectByPrompt
+      selectType: all
       tools:
         - id: 20240221170856-uKlbQx
           parameters:
             city: ""
           functionName: weatherQuery
-        - id: 20240221171301-wQ9hRR
-          parameters: {}
-      selectByPrompt: "{{question}}"
-      role: user
   - type: message
     data:
       id: 2H4xotQRxQsveDG6P8Du7
       role: user
-      content: "{{question}}"
+      content: |-
+        请你帮忙 review 以下代码,要求代码优雅: 
+        {{code}}
 model: gpt-3.5-turbo
 parameters:
-  - id: HA2wxWEojXzmqCqVQC4hp
-    key: question
-    from: editor
-name: 代码 review
+  - id: wxQzPg5kLwyQeBxwqCVjA
+    key: code
+name: 代码 review Copy
 description: "233"

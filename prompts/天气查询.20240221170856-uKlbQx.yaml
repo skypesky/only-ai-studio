@@ -1,0 +1,20 @@
+type: function
+id: 20240221170856-uKlbQx
+createdAt: 2024-02-21T09:08:56.197Z
+updatedAt: 2024-02-21T09:08:56.197Z
+createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+code: |-
+  export default async function (args) {
+
+    console.log(args);
+
+    return {
+      city: args.city,
+      temp: 20
+    }
+  }
+parameters:
+  - id: 3uMlysmcgWtvzV5CCztWV
+    key: city
+name: 天气查询
