@@ -16,5 +16,5 @@ model: gpt-3.5-turbo
 parameters:
   - id: wxQzPg5kLwyQeBxwqCVjA
     key: code
-name: 代码 review
+name: 代码 review 2
 description: 4wee
