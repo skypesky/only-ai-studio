@@ -1,0 +1,14 @@
+type: prompt
+id: 20240223141708-f4beO6
+createdAt: 2024-02-23T06:17:08.181Z
+updatedAt: 2024-02-23T06:17:08.181Z
+createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+prompts:
+  - type: message
+    data:
+      id: gJz13tZ1PMihSa3leHm-_
+      role: user
+parameters:
+  - id: fK29TaZ2XWIF0XL94RS10
+    key: ""
