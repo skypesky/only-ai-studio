@@ -1,0 +1,19 @@
+type: prompt
+id: 20240224011548-JD3U5V
+createdAt: 2024-02-23T17:15:48.344Z
+updatedAt: 2024-02-23T17:15:48.344Z
+createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+prompts:
+  - type: message
+    data:
+      id: WBY-BZ6JmtVGIBXn5mrS9
+      role: user
+      content: |-
+        请解码一下: 
+        {{code}}
+parameters:
+  - id: HE7KegKwI3AgmnrXLFrhI
+    key: code
+    from: editor
+name: 解码

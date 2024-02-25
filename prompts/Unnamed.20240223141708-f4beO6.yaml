@@ -9,6 +9,7 @@ prompts:
     data:
       id: gJz13tZ1PMihSa3leHm-_
       role: user
+      content: 如何理解朗道相变理论?可以举个生活的例子比喻一下吗?
 parameters:
   - id: fK29TaZ2XWIF0XL94RS10
     key: ""
