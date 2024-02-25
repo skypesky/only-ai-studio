@@ -9,7 +9,9 @@ prompts:
     data:
       id: gJz13tZ1PMihSa3leHm-_
       role: user
-      content: 如何理解朗道相变理论?可以举个生活的例子比喻一下吗?
+      content: >
+        朗道提出了一种按照水平和贡献划分物理学家的方法，被称为物理学家的等级，按照朗道的理论，物理学家可以分为五个等级，第一级最高，第五级最低.那么朗道当时给的名单是?
 parameters:
   - id: fK29TaZ2XWIF0XL94RS10
     key: ""
+name: result-not-same
