@@ -1,0 +1,13 @@
+type: prompt
+id: 20240226101803-EgM9oG
+createdAt: 2024-02-26T02:18:03.681Z
+updatedAt: 2024-02-26T02:18:03.681Z
+createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+prompts:
+  - type: message
+    data:
+      id: Yq0NphwqpNDtP9VXX0Bzh
+      role: user
+      content: 给出 linux 命令,列出磁盘占用最多的前10个文件夹
+name: 列出文件

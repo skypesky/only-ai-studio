@@ -1,0 +1,15 @@
+type: prompt
+id: 20240225232428-PM3uHJ
+createdAt: 2024-02-25T15:24:28.079Z
+updatedAt: 2024-02-25T15:24:28.079Z
+createdBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+updatedBy: z1VhQ6KSjPafNF1oTK8scHNdvz7SxWngeVq
+prompts:
+  - type: message
+    data:
+      id: QzwqO6IGwefdT9cG3PD80
+      role: user
+      content: >+
+        作为一个 node.js
+        开发工程师,我日常总是需要打开超多各种各样的链接,总是需要我手动输入,如何通过语音控制打开网页或者少让我打字呢?推荐几个浏览器插件?
+
