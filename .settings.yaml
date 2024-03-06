@@ -3,7 +3,7 @@ name: 项目B233
 description: 描述B
 model: gpt-3.5-turbo-16k
 createdAt: 2024-03-06T01:50:54.089Z
-updatedAt: 2024-03-06T03:38:45.061Z
+updatedAt: 2024-03-06T03:39:20.285Z
 createdBy: z1g2f6W3uALzkp3758gqHFq4aqN6ppNrak6
 updatedBy: z1g2f6W3uALzkp3758gqHFq4aqN6ppNrak6
 pinnedAt: null
@@ -14,4 +14,4 @@ topP: 1
 presencePenalty: null
 frequencyPenalty: null
 maxTokens: null
-gitAutoSync: true
+gitAutoSync: false
