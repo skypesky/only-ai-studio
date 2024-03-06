@@ -17,3 +17,4 @@ parameters:
     key: code
     from: editor
 name: 解码
+model: gpt-3.5-turbo

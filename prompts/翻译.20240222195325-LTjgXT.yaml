@@ -30,3 +30,4 @@ parameters:
         value: 英文
     required: true
     defaultValue: 英文
+model: gpt-3.5-turbo
