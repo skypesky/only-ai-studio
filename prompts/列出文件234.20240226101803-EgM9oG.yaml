@@ -10,5 +10,5 @@ prompts:
       id: Yq0NphwqpNDtP9VXX0Bzh
       role: user
       content: 给出 linux 命令,列出磁盘占用最多的前10个文件夹233
-name: 列出文件23
+name: 列出文件234
 model: gpt-3.5-turbo
