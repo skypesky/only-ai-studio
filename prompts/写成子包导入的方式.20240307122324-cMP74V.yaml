@@ -1,0 +1,19 @@
+type: prompt
+id: 20240307122324-cMP74V
+createdAt: 2024-03-07T04:23:24.290Z
+updatedAt: 2024-03-07T04:23:24.290Z
+createdBy: z1g2f6W3uALzkp3758gqHFq4aqN6ppNrak6
+updatedBy: z1g2f6W3uALzkp3758gqHFq4aqN6ppNrak6
+prompts:
+  - type: message
+    data:
+      id: vB2wn1XhgZbSmBHTu-ccZ
+      role: user
+      content: |-
+        写成子包导入的方式:
+        {{code}}
+name: 写成子包导入的方式
+parameters:
+  - id: IlKch07ZDVrIDrizgNhFz
+    key: code
+    from: editor
